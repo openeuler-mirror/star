@@ -1,0 +1,29 @@
+From dac100b46c15c7105dd7e015ce5db7b512dc37db Mon Sep 17 00:00:00 2001
+From: openEuler Buildteam <buildteam@openeuler.org>
+Date: Tue, 31 Dec 2019 23:02:27 +0800
+Subject: [PATCH] star:remove useless patch
+
+---
+ star-1.5.3/rmt/rmt.dfl | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/star-1.5.3/rmt/rmt.dfl b/star-1.5.3/rmt/rmt.dfl
+index 7b8ca8b..d5167b4 100644
+--- a/rmt/rmt.dfl
++++ b/rmt/rmt.dfl
+@@ -44,7 +44,7 @@ USER=*
+ #      name    name
+ #
+ #ACCESS=rtape  sparky  /dev/rmt/*
+-ACCESS=*       *       /dev/rmt/*
+-ACCESS=*       *       /dev/null
+-ACCESS=*       *       /dev/zero
+-#ACCESS=*      *       *
++#ACCESS=*      *       /dev/rmt/*
++#ACCESS=*      *       /dev/null
++#ACCESS=*      *       /dev/zero
++ACCESS=*       *       *
+--
+2.19.1
+
+
