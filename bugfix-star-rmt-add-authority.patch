@@ -1,29 +1,28 @@
-From dac100b46c15c7105dd7e015ce5db7b512dc37db Mon Sep 17 00:00:00 2001
+From 1ac0d780d31610d9d3bc74750879ca34c54e8f32 Mon Sep 17 00:00:00 2001
 From: openEuler Buildteam <buildteam@openeuler.org>
-Date: Tue, 31 Dec 2019 23:02:27 +0800
-Subject: [PATCH] star:remove useless patch
+Date: Wed, 1 Jan 2020 01:45:21 +0800
+Subject: [PATCH] change rmt authority
 
 ---
  star-1.5.3/rmt/rmt.dfl | 8 ++++----
  1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/star-1.5.3/rmt/rmt.dfl b/star-1.5.3/rmt/rmt.dfl
+diff --git a/rmt/rmt.dfl b/rmt/rmt.dfl
 index 7b8ca8b..d5167b4 100644
 --- a/rmt/rmt.dfl
 +++ b/rmt/rmt.dfl
 @@ -44,7 +44,7 @@ USER=*
- #      name    name
+ #	name	name
  #
- #ACCESS=rtape  sparky  /dev/rmt/*
--ACCESS=*       *       /dev/rmt/*
--ACCESS=*       *       /dev/null
--ACCESS=*       *       /dev/zero
--#ACCESS=*      *       *
-+#ACCESS=*      *       /dev/rmt/*
-+#ACCESS=*      *       /dev/null
-+#ACCESS=*      *       /dev/zero
-+ACCESS=*       *       *
---
-2.19.1
-
+ #ACCESS=rtape	sparky	/dev/rmt/*
+-ACCESS=*	*	/dev/rmt/*
+-ACCESS=*	*	/dev/null
+-ACCESS=*	*	/dev/zero
+-#ACCESS=*	*	*
++#ACCESS=*	*	/dev/rmt/*
++#ACCESS=*	*	/dev/null
++#ACCESS=*	*	/dev/zero
++ACCESS=*	*	*
+-- 
+1.8.3.1
 
