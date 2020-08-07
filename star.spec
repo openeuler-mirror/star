@@ -7,24 +7,18 @@
 %global ALT_SL1_PATH    %{_mandir}/man1/spax.1.gz
 
 Name: star
-Version: 1.5.3
-Release: 16
+Version: 1.6
+Release: 1
 Summary: An archiver supports ACL
 License: CDDL
 URL:     http://freecode.com/projects/%{name}
 Source:  http://downloads.sourceforge.net/s-tar/%{name}-%{version}.tar.bz2
-Patch1:  star-1.5.3-selinux.patch
-Patch2:  star-1.5-changewarnSegv.patch
-Patch3:  star-1.5.2-bufferoverflow.patch
-Patch4:  star-1.5.1-manpagereferences.patch
-Patch5:  star-1.5.1-selinux-segfault.patch
-Patch6:  star-1.5.1-crc.patch
-Patch7:  star-1.5.2-use-ssh-by-default.patch
-Patch8: star-1.5.3-star-mk.patch
-Patch9: star-1.5.3-pax-X-option.patch
-Patch10: star-1.5.3-default-acl.patch
 
-Patch9000: bugfix-star-rmt-add-authority.patch
+Patch0:  star-1.6-star-mk.patch
+Patch1:  star-1.5.2-bufferoverflow.patch
+Patch2:  star-1.6-manpagereferences.patch
+Patch3:  star-1.5.2-use-ssh-by-default.patch
+Patch4:  bugfix-star-rmt-add-authority.patch
 
 BuildRequires: libattr-devel libacl-devel libtool libselinux-devel e2fsprogs-devel git
 Provides: scpio = %{version}-%{release} spax = %{version}-%{release} rmt = %{version}-%{release}
@@ -135,7 +129,7 @@ fi
 %{_sysconfdir}/rmt
 
 %files help
-%{_mandir}/man1/star.*
+%{_mandir}/man1/star*
 %{_mandir}/man1/ustar.*
 %{_mandir}/man5/star.*
 %{_mandir}/man1/scpio.*
@@ -143,6 +137,9 @@ fi
 %{_mandir}/man1/rmt.*
 
 %changelog
+* Fri Aug 7 2020 Hugel<gengqihu1@huawei.com> -1.6-1
+- update to 1.6
+
 * Thu Nov 21 2019 fangyufa<fangyufa1@huawei.com> - 1.5.3-16
 - add buildrequires of git for x86_64 build
 
