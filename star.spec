@@ -8,7 +8,7 @@
 
 Name: star
 Version: 1.6
-Release: 1
+Release: 2
 Summary: An archiver supports ACL
 License: CDDL
 URL:     http://freecode.com/projects/%{name}
@@ -52,7 +52,7 @@ star_recode()
 
 star_recode AN-1.5 AN-1.5.2 star/star.4
 
-for PLAT in %{arm} %{power64} aarch64 %{mips} x86_64; do
+for PLAT in %{arm} %{power64} aarch64 %{mips} x86_64 riscv64; do
     for AFILE in gcc cc; do
             [ ! -e RULES/${PLAT}-linux-${AFILE}.rul ] \
             && ln -s i586-linux-${AFILE}.rul RULES/${PLAT}-linux-${AFILE}.rul
@@ -137,6 +137,9 @@ fi
 %{_mandir}/man1/rmt.*
 
 %changelog
+* Wed Aug 26 2020 whoisxxx<zhangxuzhou4@huawei.com> -1.6-2
+- Adapt to RISC-V
+
 * Fri Aug 7 2020 Hugel<gengqihu1@huawei.com> -1.6-1
 - update to 1.6
 
