@@ -8,11 +8,11 @@
 
 Name: star
 Version: 1.6
-Release: 1
+Release: 2
 Summary: An archiver supports ACL
 License: CDDL
 URL:     http://freecode.com/projects/%{name}
-Source:  http://downloads.sourceforge.net/s-tar/%{name}-%{version}.tar.bz2
+Source:  https://fossies.org/linux/misc//%{name}-%{version}.tar.bz2
 
 Patch0:  star-1.6-star-mk.patch
 Patch1:  star-1.5.2-bufferoverflow.patch
@@ -137,6 +137,9 @@ fi
 %{_mandir}/man1/rmt.*
 
 %changelog
+* Thu Sep 10 2020 wangchen<wangchen137@huawei.com> - 1.6-2
+- modify the URL of Source
+
 * Fri Aug 7 2020 Hugel<gengqihu1@huawei.com> - 1.6-1
 - update to 1.6
 
