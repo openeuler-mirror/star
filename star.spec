@@ -8,7 +8,7 @@
 
 Name: star
 Version: 1.6
-Release: 3
+Release: 4
 Summary: An archiver supports ACL
 License: CDDL
 URL:     http://freecode.com/projects/%{name}
@@ -25,17 +25,12 @@ Provides: scpio = %{version}-%{release} spax = %{version}-%{release} rmt = %{ver
 Obsoletes: scpio spax rmt 
 Requires(post):  %{ALTERNATIVES}
 Requires(preun): %{ALTERNATIVES}
+Provides:        star-help = %{version}-%{release}
+Obsoletes:       star-help < %{version}-%{release}
 
 %description
 Star is an archiver with ACL support, it saves many files together into a single
 tape or disk archive, and can restore individual files from the archive.
-
-%package        help
-Summary:        Help files for %{name}
-BuildArch:      noarch
-
-%description    help
-Help files for %{name}.
 
 %prep
 %autosetup -n %{name}-%{version} -p1 -Sgit
@@ -127,8 +122,6 @@ fi
 %{_sbindir}/rmt
 %config %{_sysconfdir}/default/rmt
 %{_sysconfdir}/rmt
-
-%files help
 %{_mandir}/man1/star*
 %{_mandir}/man1/ustar.*
 %{_mandir}/man5/star.*
@@ -137,6 +130,9 @@ fi
 %{_mandir}/man1/rmt.*
 
 %changelog
+* Fri Dec 25 2020 Liquor<lirui130@huawei.com> -1.6-4
+- add package star-help to package star
+
 * Thu Sep 10 2020 wangchen<wangchen137@huawei.com> -1.6-3
 - modify the URL of Source
 
