@@ -8,7 +8,7 @@
 
 Name: star
 Version: 1.6
-Release: 4
+Release: 5
 Summary: An archiver supports ACL
 License: CDDL
 URL:     http://freecode.com/projects/%{name}
@@ -20,7 +20,7 @@ Patch2:  star-1.6-manpagereferences.patch
 Patch3:  star-1.5.2-use-ssh-by-default.patch
 Patch4:  bugfix-star-rmt-add-authority.patch
 
-BuildRequires: libattr-devel libacl-devel libtool libselinux-devel e2fsprogs-devel git
+BuildRequires: libattr-devel libacl-devel libtool libselinux-devel e2fsprogs-devel 
 Provides: scpio = %{version}-%{release} spax = %{version}-%{release} rmt = %{version}-%{release}
 Obsoletes: scpio spax rmt 
 Requires(post):  %{ALTERNATIVES}
@@ -33,7 +33,7 @@ Star is an archiver with ACL support, it saves many files together into a single
 tape or disk archive, and can restore individual files from the archive.
 
 %prep
-%autosetup -n %{name}-%{version} -p1 -Sgit
+%autosetup -n %{name}-%{version} -p1
 
 cp -a star/all.mk star/Makefile
 
@@ -130,6 +130,9 @@ fi
 %{_mandir}/man1/rmt.*
 
 %changelog
+* Fri Jul 30 2021 chenyanpanHW <chenyanpan@huawei.com> - 1.6-5
+- DESC: delete -Sgit from %autosetup, and delete BuildRequires git
+
 * Fri Dec 25 2020 Liquor<lirui130@huawei.com> -1.6-4
 - add package star-help to package star
 
