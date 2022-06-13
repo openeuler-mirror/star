@@ -8,7 +8,7 @@
 
 Name: star
 Version: 1.6
-Release: 4
+Release: 5
 Summary: An archiver supports ACL
 License: CDDL
 URL:     http://freecode.com/projects/%{name}
@@ -47,7 +47,7 @@ star_recode()
 
 star_recode AN-1.5 AN-1.5.2 star/star.4
 
-for PLAT in %{arm} %{power64} aarch64 %{mips} x86_64 riscv64; do
+for PLAT in %{arm} %{power64} aarch64 loongarch64 %{mips} x86_64 riscv64; do
     for AFILE in gcc cc; do
             [ ! -e RULES/${PLAT}-linux-${AFILE}.rul ] \
             && ln -s i586-linux-${AFILE}.rul RULES/${PLAT}-linux-${AFILE}.rul
@@ -130,6 +130,9 @@ fi
 %{_mandir}/man1/rmt.*
 
 %changelog
+* Mon Jun 13 2022 baizhonggui<baizhonggui@h-partners.com> -1.6-5
+- Adapt loongarch for fixing build error
+
 * Fri Dec 25 2020 Liquor<lirui130@huawei.com> -1.6-4
 - add package star-help to package star
 
