@@ -8,9 +8,9 @@
 
 Name: star
 Version: 1.6
-Release: 5
+Release: 6
 Summary: An archiver supports ACL
-License: CDDL
+License: CDDL-1.0
 URL:     http://freecode.com/projects/%{name}
 Source:  https://fossies.org/linux/misc/%{name}-%{version}.tar.bz2
 
@@ -130,6 +130,9 @@ fi
 %{_mandir}/man1/rmt.*
 
 %changelog
+* Tue Jun 28 2022 Chenyx <chenyixiong3@huawei.com> - 1.6-6
+- License compliance rectification
+
 * Fri Jul 30 2021 chenyanpanHW <chenyanpan@huawei.com> - 1.6-5
 - DESC: delete -Sgit from %autosetup, and delete BuildRequires git
 
