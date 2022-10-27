@@ -8,7 +8,7 @@
 
 Name: star
 Version: 1.6
-Release: 4
+Release: 5
 Summary: An archiver supports ACL
 License: CDDL
 URL:     http://freecode.com/projects/%{name}
@@ -130,6 +130,9 @@ fi
 %{_mandir}/man1/rmt.*
 
 %changelog
+* Thu Oct 27 2022 dongyuzhen <dongyuzhen@h-partners.com> - 1.6-5
+- Rebuild for next release
+
 * Fri Dec 25 2020 Liquor<lirui130@huawei.com> -1.6-4
 - add package star-help to package star
 
