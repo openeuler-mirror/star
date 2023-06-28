@@ -8,7 +8,7 @@
 
 Name: star
 Version: 1.6
-Release: 7
+Release: 8
 Summary: An archiver supports ACL
 License: CDDL-1.0
 URL:     http://freecode.com/projects/%{name}
@@ -48,7 +48,11 @@ star_recode()
 star_recode AN-1.5 AN-1.5.2 star/star.4
 
 for PLAT in %{arm} %{power64} aarch64 %{mips} x86_64 loongarch64 riscv64; do
-    for AFILE in gcc cc; do
+		%if "%toolchain" == "clang"
+			for AFILE in clang; do
+		%else 
+			for AFILE in gcc cc; do
+		%endif
             [ ! -e RULES/${PLAT}-linux-${AFILE}.rul ] \
             && ln -s i586-linux-${AFILE}.rul RULES/${PLAT}-linux-${AFILE}.rul
     done
@@ -65,7 +69,7 @@ done
     INSTALL='sh $(SRCROOT)/conf/install-sh -c -m $(INSMODEINS)'         \\\
     COPTX="$RPM_OPT_FLAGS -DTRY_EXT2_FS"                                \\\
     LDOPTX="$RPM_LD_FLAGS"                                              \\\
-    DEFCCOM=gcc
+    DEFCCOM=$CC
 
 %make_build %make_flags
 
@@ -130,6 +134,9 @@ fi
 %{_mandir}/man1/rmt.*
 
 %changelog
+* Wed Jun 28 2023 yoo <sunyuechi@iscas.ac.cn> - 1.6-8
+- fix clang build error
+
 * Mon Nov 21 2022 huajingyun <huajingyun@loongson.cn> - 1.6-7
 - Adapt loongarch for fixing build error
 
